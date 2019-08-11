@@ -3,7 +3,7 @@
  * @version: 
  * @Date: 2019-08-11 11:37:31
  * @LastEditors: yeyifu
- * @LastEditTime: 2019-08-11 17:23:08
+ * @LastEditTime: 2019-08-11 18:04:51
  * @Author: yeyifu
  * @LastModifiedBy: yeyifu
  */
@@ -40,7 +40,7 @@ io.on('connection', function(socket){
   socket.on('disconnect', function () {
     console.log("wewewew",connectionList[socketId].username)
     if (connectionList[socketId].username) {
-        io.emit('broadcast_quit', {
+      socket.broadcast.emit('broadcast_quit', {
             username: connectionList[socketId].username
         });
     }
